@@ -19,7 +19,7 @@ return new class extends Migration
           $table->string('imagen');
           $table->DateTime('fecha');
           $table->string('autor');
-          $table->string('descripcion');
+          $table->longText('descripcion');
           $table->timestamp('fecha_creado')->nullable();
           $table->timestamp('fecha_modificado')->nullable();
       });

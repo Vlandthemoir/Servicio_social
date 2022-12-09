@@ -14,6 +14,7 @@ class Articulos extends Model
 		'portada',
 		'fecha',
     'categoria',
+    'resumen',
     'cuerpo',
 	];
   protected $table = 'articulos';

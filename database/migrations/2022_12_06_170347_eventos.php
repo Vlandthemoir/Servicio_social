@@ -21,7 +21,7 @@ return new class extends Migration
           $table->string('lugar');
           $table->Time('hora_inicio');
           $table->Time('hora_fin');
-          $table->string('descripcion');
+          $table->longText('descripcion');
           $table->timestamp('fecha_creado')->nullable();
           $table->timestamp('fecha_modificado')->nullable();
       });

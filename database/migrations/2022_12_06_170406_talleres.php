@@ -18,6 +18,7 @@ return new class extends Migration
           $table->string('nombre');
           $table->string('imagen');
           $table->string('dias');
+          $table->string('horario');
           $table->string('edades');
           $table->string('tipo');
           $table->timestamp('fecha_creado')->nullable();

@@ -17,9 +17,10 @@ return new class extends Migration
           $table->id();
           $table->string('titulo');
           $table->string('portada');
-          $table->DateTime('fecha');
+          $table->date('fecha');
           $table->string('categoria');
-          $table->string('cuerpo');
+          $table->longText('resumen');
+          $table->longText('cuerpo');
           $table->timestamp('fecha_creado')->nullable();
           $table->timestamp('fecha_modificado')->nullable();
       });
