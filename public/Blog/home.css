@@ -11,11 +11,12 @@
     --lightprimario:rgb(117, 101, 194);
 }
 .general-container{
-  top: 50%;
+  top: 20%;/*50%*/
   left: 50%;
   position:absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
+  width: 100%;
 }
 /*<-------configuracion para el baner de inicio------->*/
 

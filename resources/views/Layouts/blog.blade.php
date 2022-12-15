@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header">
-	    <a  href="" class="logo-header"><h1>Centro<span>Cultural</span></h1></a>
+	    <a  href="{{route('home.blog')}}" class="logo-header"><h1>Centro<span>Cultural</span></h1></a>
           <div class="events-bar">
             <div class="events-fondo"></div>
             <div class="events-text">

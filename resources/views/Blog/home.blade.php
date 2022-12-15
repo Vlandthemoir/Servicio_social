@@ -40,10 +40,11 @@
   <img class="img" src="{{asset('Images/card7.jpg')}}">
 </div>
 </div>
+<!--
 <div class="banner-gmaps">
 <h2>Encuentranos en</h2>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.488278132336!2d-93.10819288598235!3d16.752365725219303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ecd88665921a1d%3A0x3ea0b7329fb7ae15!2sCentro%20Cultural%20de%20Chiapas%20%22Jaime%20Sabines%22!5e0!3m2!1ses!2smx!4v1657220573312!5m2!1ses!2smx" width="1346" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
-
+-->
 </div>
 @endsection

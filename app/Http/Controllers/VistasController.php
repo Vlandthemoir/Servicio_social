@@ -94,4 +94,5 @@ class VistasController extends Controller
     return view('Blog.articulo' , compact('articulo'));
   }
   //////////////////////////////////////////////////////////////////////////////
+  
 }
