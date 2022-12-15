@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VistasController;
 use App\Http\Controllers\CmsController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TalleresController;
 
 /*rutas para el blog*/
 Route::get('/',[VistasController::class,'create_home'])
@@ -36,3 +37,19 @@ Route::get('/logout',[LoginController::class,'destroy'])
 Route::get('/cms/home',[CmsController::class,'create_home'])
 ->middleware('auth')
 ->name('home.cms');
+/*Rutas para los talleres*/
+Route::get('/cms/talleres', [TalleresController::class, 'index'])
+->middleware('auth')
+->name('talleres.cms');
+Route::post('/cms/talleres-register', [TalleresController::class, 'store'])
+->middleware('auth')
+->name('talleres-create.cms');
+Route::get('/cms/talleres-edit/{id}', [TalleresController::class, 'edit'])
+->middleware('auth')
+->name('talleres-edit.cms');
+Route::put('/cms/talleres-update/{id}', [TalleresController::class, 'update'])
+->middleware('auth')
+->name('talleres-update.cms');
+Route::delete('/cms/talleres-delete/{id}',[TalleresController::class,'destroy'])
+->middleware('auth')
+->name('talleres-delete.cms');

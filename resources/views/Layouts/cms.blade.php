@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header">
-	    <a  href="{{route('home.blog')}}" class="logo-header"><h1>Centro<span>Cultural</span></h1></a>
+	    <a  href="{{route('home.cms')}}" class="logo-header"><h1>Centro<span>Cultural</span>Administración</h1></a>
           <div class="events-bar">
             <div class="events-fondo"></div>
             <div class="events-text">
@@ -19,11 +19,7 @@
           <nav class="navbar">
 
             <ul>
-              <li><a href="#">Talleres</a>
-                <ul>
-			<li><a href="">Verano</a></li>
-			<li><a href="">Permamentes</a></li>
-                </ul>
+              <li><a href="{{route('talleres.cms')}}">Talleres</a>
               </li>
 	      <li><a href="">Articulos</a>
 	      </li>
