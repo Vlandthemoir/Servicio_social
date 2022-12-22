@@ -4,14 +4,15 @@
 
 .form-container {
   top: 10%;
-  left:20% ;
+  left: 60% ;
   position: absolute;
   display:  block;
-  transform: translate(-65%);
+  transform: translate(-75%);
   box-sizing: border-box;
 }
 
 .form-container form {
+  width: 1000px;
   display:grid;
   background: white;
   padding:25px;
@@ -36,16 +37,32 @@
   outline:none;
   border:none;
   border-radius:5px;
-  text-align:center;
+  padding: 5px;
 }
-input[type=text]:hover,input[type=date]:hover,textarea:hover {
+input[type=text]:hover,input[type=text]:hover,textarea:hover {
   cursor: pointer;
+  padding: 2px;
   border:solid 2.5px green;
 }
+ select{
+   outline: none;
+   border: none;
+   border-radius: 5px;
+   padding: 5px;
+   background-color: #B9EBAB;
+   color: black;
+ }
+ select:hover{
+   cursor: pointer;
+   padding: 2.5px;
+   border:solid 2.5px green;
+
+ }
 /*configuracion para los botones del formulario*/
 .bottom-buttons {
   padding-top:5px;
 }
+
 .bottom-buttons button {
   background-color:white;
   padding:5px;
@@ -57,72 +74,22 @@ input[type=text]:hover,input[type=date]:hover,textarea:hover {
   width:100%;
   margin-top:20px;
 }
+
 .bottom-buttons button:hover {
   background-color:green;
   color:white;
 }
+
 /*----------------------------------------------*/
-/*------Configuracion para la vista previa------*/
+
+
 .preview-container {
   top: 10%;
-  left: 50%;
+  left: 45%;
   position: absolute;
   display: block;
-  transform: translate(-20%);
+  transform: translate(-75%);
   box-sizing: border-box;
-}
-.article {
- display:flex;
- margin-top:20px;
- width:800px;
- height:450px;
- background:white;
- border-radius:25px;
- box-shadow: -2px 0px 16px 1px #424949;
- -webkit-box-shadow: -2px 0px 16px 1px #424949;
- -moz-box-shadow: -2px 0px 16px 1px #424949;
-}
-.left-side {
- text-align:center;
- width:400px;
- height:450px;
-}
-.left-side img {
- max-width:350px;
- max-height:400px;
- width:auto;
- height:auto;
- border-radius:15px;
- margin:25px;
-}
-.right-side {
- width:400px;
- height:450px;
-}
-.right-side h2{
- padding-top:20px;
- padding-bottom:20px;
- text-align:center;
- font-size:15px;
-
-}
-.right-side p{
- padding-left:45px;
- padding-right:45px;
- text-align:justify;
- font-size:10px;
-}
-.right-side div {
- width:300px;
- position:absolute;
- margin-top:70px;
- margin-left:50px;
-}
-.right-side div  h5{
- font-size:12.5px;
- text-align:center;
- padding:0;
- margin:0;
 }
 /*configuraciones para el texto del encabezado*/
 .title {
@@ -142,15 +109,93 @@ input[type=text]:hover,input[type=date]:hover,textarea:hover {
  margin:0;
 }
 /*<----------------->*/
+/*<------------------------------------------>*/
+/*<---------configuracion para cartas--------->*/
+.card {
+  position:  relative;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+}
+.card .face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+.card .back div {
+    font-size:20px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+.bot {
+  border-color: white;
+  border-top: solid;
+  border-radius: 100%;;
+
+}
+/*<------------------------------------------->*/
 /*Configuracion para la tabla y elementos dentro de esta*/
 /*tamaño y proporciones de la tabla*/
 .table-container {
-
-  top: 130%;
-  left: 30%;
+  top: 10%;
+  left: 70%;
   position: absolute;
   display: block;
-  transform: translate(-20%);
+  transform: translate(40%);
   box-sizing: border-box;
   padding-right:25px;
 
@@ -173,30 +218,14 @@ table thead tr {
 }
 table tbody tr {
  background-color: #b9ebab ;
- text-align:center;
 }
+
 table tbody tr:nth-child(even){background-color: #f2f2f2}
 table tbody tr td {
  padding: 10px;
  font-size:15px;
 }
-table tbody tr td {
- width:500px;
- height:100px;
-}
-.row .column img {
- width:100%;
- border-radius:25px;
- padding:5px;
-}
-.row {
- display:flex;
- padding:5px;
-}
-.column {
- flex:25%;
- padding:5px;
-}
+
 /*botones de la tabla*/
 #delete {
   background-color:white;
@@ -210,10 +239,12 @@ table tbody tr td {
   text-decoration:none;
   font-size:15px;
 }
+
 #delete:hover {
   background-color:red;
   color:white;
 }
+
 #update {
   background-color:white;
   padding:5px;
@@ -226,6 +257,7 @@ table tbody tr td {
   text-decoration:none;
   font-size:15px;
 }
+
 #update:hover {
   background-color:#005FFF;
   color:white;

@@ -7,11 +7,11 @@
 
 <div class="general-container">
 	<div class="title">
-		<h3 id="prueba">GALERIA</h3>
+		<h3 id="prueba">Actualizacion de una imagen</h3>
 	</div>
 	<div class="form-container">
 		<div class="title">
-			<h3>Registro</h3>
+			<h3>Formulario</h3>
 		</div>
 		<form action="{{route('galeria-update.cms',$galeria->id)}}" method="POST">
 			@csrf

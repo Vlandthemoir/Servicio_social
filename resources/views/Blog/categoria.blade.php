@@ -28,8 +28,8 @@
       <div class="content-title"><h1>{{$datos->titulo}}</h1></div>
 
       <div class="content-tag"  ><a href="{{ route('categoria.blog', $datos->categoria) }}">{{$datos->categoria}}</a></div>
-      <span class="content-text">{{$datos->resumen}}</span>
-        <a class="content-button" href="">Leer mas</a>
+      <span class="content-text"><?php echo $datos->resumen; ?></span>
+        <a class="content-button" href="{{ route('articulo.blog', $datos->id) }}">Leer mas</a>
     </div>
   </div>
   @endforeach

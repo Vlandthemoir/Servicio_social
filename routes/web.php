@@ -6,7 +6,7 @@ use App\Http\Controllers\CmsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TalleresController;
 use App\Http\Controllers\GaleriaController;
-
+use App\Http\Controllers\ArticulosController;
 /*rutas para el blog*/
 Route::get('/',[VistasController::class,'create_home'])
 ->name('home.blog');
@@ -71,3 +71,19 @@ Route::put('/cms/galeria-update/{id}', [GaleriaController::class, 'update'])
 Route::delete('/cms/galeria-delete/{id}',[GaleriaController::class,'destroy'])
 ->middleware('auth')
 ->name('galeria-delete.cms');
+/*rutas articulo*/
+Route::get('/cms/articulos', [ArticulosController::class, 'index'])
+->middleware('auth')
+->name('articulos.cms');
+Route::post('/cms/articulos-register', [ArticulosController::class, 'store'])
+->middleware('auth')
+->name('articulos-create.cms');
+Route::get('/cms/articulos-edit/{id}', [ArticulosController::class, 'edit'])
+->middleware('auth')
+->name('articulos-edit.cms');
+Route::put('/cms/articulos-update/{id}', [ArticulosController::class, 'update'])
+->middleware('auth')
+->name('articulos-update.cms');
+Route::delete('/cms/articulos-delete/{id}',[ArticulosController::class,'destroy'])
+->middleware('auth')
+->name('articulos-delete.cms');

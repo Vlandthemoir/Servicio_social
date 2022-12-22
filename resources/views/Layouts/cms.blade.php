@@ -21,9 +21,9 @@
             <ul>
               <li><a href="{{route('talleres.cms')}}">Talleres</a>
               </li>
-	      <li><a href="">Articulos</a>
+	      <li><a href="{{route('articulos.cms')}}">Articulos</a>
 	      </li>
-	      <li><a href="">Calendario</a></li>
+	      
 	      <li><a href="{{route('galeria.cms')}}">Galeria</a></li>
 
             </ul>

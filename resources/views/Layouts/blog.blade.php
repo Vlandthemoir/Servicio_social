@@ -27,7 +27,7 @@
               </li>
 	      <li><a href="{{route('articulos.blog')}}">Articulos</a>
 	      </li>
-	      <li><a href="">Calendario</a></li>
+	      
 	      <li><a href="{{route('galeria.blog')}}">Galeria</a></li>
 
             </ul>

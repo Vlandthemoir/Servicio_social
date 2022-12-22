@@ -25,6 +25,6 @@
       {% block content%}
       {% endblock%}
    </div>
- 
+
   </body>
  </html>
