@@ -19,9 +19,9 @@
 			<h3>Portada</h3>
 			<input id="form-image" oninput="load()" type="text" name="imagen" placeholder="">
 			<h3>Dias</h3>
-			<textarea id="form-days" oninput="load()" name="dias" rows="2" cols="30"></textarea>
+			<input id="form-days" oninput="load()" type="text" name="dias" placeholder="">
 			<h3>Horario</h3>
-			<textarea id="form-hours" oninput="load()" name="horario" rows="2" cols="30"></textarea>
+			<input id="form-hours" oninput="load()" type="text" name="horario" placeholder="">
 			<h3>Edades</h3>
 			<textarea id="form-ages" oninput="load()" name="edades" rows="2" cols="30"></textarea>
       <h3>Tipo de curso</h3>

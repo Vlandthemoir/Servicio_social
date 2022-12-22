@@ -20,9 +20,9 @@
 			<h3>Portada</h3>
 			<input id="form-image" oninput="load()" type="text" name="imagen" value="{{$talleres->imagen}}">
 			<h3>Dias</h3>
-			<textarea id="form-days" oninput="load()" name="dias" rows="2" cols="30" value="">{{$talleres->dias}}</textarea>
+			<input id="form-days" oninput="load()" type="text" name="dias" value="{{$talleres->dias}}">
 			<h3>Horario</h3>
-			<textarea id="form-hours" oninput="load()" name="horario" rows="2" cols="30" value="">{{$talleres->horario}}</textarea>
+			<input id="form-hours" oninput="load()" type="text" name="horario" value="{{$talleres->horario}}">
 			<h3>Edades</h3>
 			<textarea id="form-ages" oninput="load()" name="edades" rows="2" cols="30" value="">{{$talleres->edades}}</textarea>
       <h3>Tipo de curso</h3>

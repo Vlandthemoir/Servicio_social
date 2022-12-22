@@ -40,7 +40,7 @@
 }
 input[type=text]:hover,textarea:hover {
   cursor: pointer;
-  padding: 2.5px;
+  padding: 2px;
   border:solid 2.5px green;
 }
  select{

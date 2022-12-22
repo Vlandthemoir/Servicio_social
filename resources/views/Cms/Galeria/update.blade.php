@@ -2,7 +2,6 @@
 
 @push('styles')
 	<link href="{{asset('Cms/Galeria/view.css')}}" rel="stylesheet">
-	<script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
 @endpush
 @section('content')
 
@@ -14,18 +13,19 @@
 		<div class="title">
 			<h3>Registro</h3>
 		</div>
-		<form action="{{route('galeria-create.cms')}}" method="POST">
+		<form action="{{route('galeria-update.cms',$galeria->id)}}" method="POST">
 			@csrf
+      @method("PUT")
 			<h3>Titulo</h3>
-			<input id="form-name" oninput="load()" type="text" name="titulo" placeholder="">
+			<input id="form-name" oninput="load()" type="text" name="titulo" value="{{$galeria->titulo}}" placeholder="">
 			<h3>Portada</h3>
-			<input id="form-image" oninput="load()" type="text" name="imagen" placeholder="">
+			<input id="form-image" oninput="load()" type="text" name="imagen" value="{{$galeria->imagen}}" placeholder="">
 			<h3>Fecha</h3>
-			<input id="form-date" oninput="load()" type="date" name="fecha" placeholder="">
+			<input id="form-date" oninput="load()" type="date" name="fecha" value="{{$galeria->fecha}}" placeholder="">
 			<h3>Autor</h3>
-			<input id="form-autor" oninput="load()" type="text" name="autor" placeholder="">
+			<input id="form-autor" oninput="load()" type="text" name="autor" value="{{$galeria->autor}}" placeholder="">
 			<h3>Descripcion</h3>
-			<textarea id="form-description" oninput="load()" name="descripcion" rows="9" cols="40"></textarea>
+			<textarea id="form-description" oninput="load()" name="descripcion" rows="9" cols="40">{{$galeria->descripcion}}</textarea>
 			<div class="bottom-buttons">
 				<button type="submit"><b>Guardar</b></button>
 			</div>
@@ -48,53 +48,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="table-container">
-		<div class="title">
-			<h3>Tabla de contenidos</h3>
-		</div>
-		<table>
-			<thead>
-				<tr>
-					<td>ID</td>
-					<td>Titulo</td>
-					<td>Imagen</td>
-					<td>Fecha</td>
-					<td>Autor</td>
-					<td colspan="2">Ajustes</td>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach ($datos as $item)
-				<tr>
-					<td>{{ $item->id }}</td>
-					<td>{{ $item->titulo }}</td>
-					<td>
-						<div class="row">
-							<div class="column">
-								<img src="{{ $item->imagen }}"/>
-							</div>
-						</div>
-					</td>
-					<td>{{ $item->fecha }}</td>
-					<td>{{ $item->autor }}</td>
-					<td>
-            <form action="{{route('galeria-delete.cms',$item->id)}}" method="POST">
-              @csrf
-              @method('DELETE')
-              <button type="submit" id="delete">Eliminar</button>
-            </form>
-					</td>
-					<td>
-            <form action="{{route('galeria-edit.cms',$item->id)}}" method="GET">
-              @csrf
-              <button type="submit" id="update">Actualizar</button>
-            </form>
-					</td>
-				</tr>
-        @endforeach
-			</tbody>
-		</table>
 	</div>
 </div>
 <script type="text/javascript">
@@ -122,11 +75,5 @@
 		  const e = document.getElementById("form-description").value;
 		  document.getElementById("preview-description").innerHTML = e;
 	}
-
-	ClassicEditor
-        .create( document.querySelector( '' ) )
-        .catch( error => {
-            console.error( error );
-        } );
 </script>
 @endsection

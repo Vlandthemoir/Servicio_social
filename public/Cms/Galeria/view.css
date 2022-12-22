@@ -38,9 +38,13 @@
   border-radius:5px;
   text-align:center;
 }
+input[type=text]:hover,input[type=date]:hover,textarea:hover {
+  cursor: pointer;
+  border:solid 2px green;
+}
 /*configuracion para los botones del formulario*/
 .bottom-buttons {
-  padding-top:5px;	
+  padding-top:5px;
 }
 .bottom-buttons button {
   background-color:white;
@@ -61,7 +65,7 @@
 /*------Configuracion para la vista previa------*/
 .preview-container {
   top: 10%;
-  left: 45%;
+  left: 50%;
   position: absolute;
   display: block;
   transform: translate(-20%);
@@ -135,13 +139,14 @@
  text-shadow: #474747 3px 5px 2px, 40px 28px 20px rgba(0,0,0,0);
  font-weight: 750;
  padding:0;
- margin:0; 
+ margin:0;
 }
 /*<----------------->*/
 /*Configuracion para la tabla y elementos dentro de esta*/
 /*tamaño y proporciones de la tabla*/
 .table-container {
-  top: 110%;
+
+  top: 130%;
   left: 30%;
   position: absolute;
   display: block;
@@ -179,6 +184,19 @@ table tbody tr td {
  width:500px;
  height:100px;
 }
+.row .column img {
+ width:100%;
+ border-radius:25px;
+ padding:5px;
+}
+.row {
+ display:flex;
+ padding:5px;
+}
+.column {
+ flex:25%;
+ padding:5px;
+}
 /*botones de la tabla*/
 #delete {
   background-color:white;
@@ -211,18 +229,5 @@ table tbody tr td {
 #update:hover {
   background-color:#005FFF;
   color:white;
-}
-.row .column img {
- width:100%;
- border-radius:25px;
- padding:5px;
-}
-.row {
- display:flex;
- padding:5px;
-}
-.column {
- flex:25%;
- padding:5px;
 }
 /*------------------------------------------------------*/

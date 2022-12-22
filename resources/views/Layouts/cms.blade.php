@@ -24,7 +24,7 @@
 	      <li><a href="">Articulos</a>
 	      </li>
 	      <li><a href="">Calendario</a></li>
-	      <li><a href="">Galeria</a></li>
+	      <li><a href="{{route('galeria.cms')}}">Galeria</a></li>
 
             </ul>
 

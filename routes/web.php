@@ -5,6 +5,7 @@ use App\Http\Controllers\VistasController;
 use App\Http\Controllers\CmsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TalleresController;
+use App\Http\Controllers\GaleriaController;
 
 /*rutas para el blog*/
 Route::get('/',[VistasController::class,'create_home'])
@@ -27,13 +28,14 @@ Route::get('/articulos/categoria/{categoria}',[VistasController::class,'create_c
 ->name('categoria.blog');
 
 /*rutas para el cms*/
+/*rutas para el login*/
 Route::get('/login',[LoginController::class,'create'])
 ->name('login.index');
 Route::post('/login',[LoginController::class,'store'])
 ->name('login.store');
 Route::get('/logout',[LoginController::class,'destroy'])
 ->name('login.destroy');
-
+/*ruta para el home del cms*/
 Route::get('/cms/home',[CmsController::class,'create_home'])
 ->middleware('auth')
 ->name('home.cms');
@@ -53,3 +55,19 @@ Route::put('/cms/talleres-update/{id}', [TalleresController::class, 'update'])
 Route::delete('/cms/talleres-delete/{id}',[TalleresController::class,'destroy'])
 ->middleware('auth')
 ->name('talleres-delete.cms');
+/*Rutas para la galeria*/
+Route::get('/cms/galeria', [GaleriaController::class, 'index'])
+->middleware('auth')
+->name('galeria.cms');
+Route::post('/cms/galeria-register', [GaleriaController::class, 'store'])
+->middleware('auth')
+->name('galeria-create.cms');
+Route::get('/cms/galeria-edit/{id}', [GaleriaController::class, 'edit'])
+->middleware('auth')
+->name('galeria-edit.cms');
+Route::put('/cms/galeria-update/{id}', [GaleriaController::class, 'update'])
+->middleware('auth')
+->name('galeria-update.cms');
+Route::delete('/cms/galeria-delete/{id}',[GaleriaController::class,'destroy'])
+->middleware('auth')
+->name('galeria-delete.cms');

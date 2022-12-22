@@ -9,6 +9,7 @@ use App\Models\Talleres;
 
 class VistasController extends Controller
 {
+  //arreglar esto hacer que los datos se traigan directamente desde el modelo 
   //aqui declaro las vistas y paso parametros de la base de datos a estas
   //////////////////////////////////////////////////////////////////////////////
   //vistas para el inicio
@@ -94,5 +95,5 @@ class VistasController extends Controller
     return view('Blog.articulo' , compact('articulo'));
   }
   //////////////////////////////////////////////////////////////////////////////
-  
+
 }
