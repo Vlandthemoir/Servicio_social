@@ -5,34 +5,35 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\LoginRequest;
+use App\Models\Usuarios;
+use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
   public function create(){
   return view('Cms.Auth.login');
 }
-public function store(LoginRequest $request){
-  $credenciales = $request->getCredentials();
-  //obtengo los datos que el usuario ingresa en el login
-  //correo
-  $correo = request()->only('correo');
-  //contraseña
-  $contraseña = request()->only('contraseña');
-  //realizo la comprobacion en la base de datos mediante una consulta del query builder
-  $usuario = DB::table('usuarios')
-              ->select('correo','contraseña')
-              ->where('correo', '=', $correo)
-              ->where('contraseña', '=', $contraseña)
-              ->count();
-  if($usuario == 1){
-    //hago uso del LoginRequest para traer las credenciales
-    //valido las credenciales despues de saber que son validas
-    $sesion = Auth::getProvider()->retrieveByCredentials($credenciales);
-    auth()->login($sesion);
-    return redirect("/cms/home");
+
+public function store(Request $request){
+
+  $correo = request()->input('correo');
+
+  $encontrado = Usuarios::where('correo', '=', $correo)->first();
+
+  if(is_null($encontrado)){
+    return 'Su correo electronico es incorrecto';
   }else{
-    return 'error';
+
+    $contraseña = request()->input('contraseña');
+    $contraseña_encontrada =$encontrado->contraseña;
+    if(Hash::check($contraseña,$contraseña_encontrada)){
+      Auth::login($encontrado);
+      return redirect()->to('/cms/home');
+    }else{
+      return 'Tu contraseña es incorrecta';
+    }
+
   }
+
 }
 public function destroy(){
   auth()->logout();
